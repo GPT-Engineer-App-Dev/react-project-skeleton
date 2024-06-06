@@ -36,6 +36,12 @@ Comments // table: comments
     content: string
     event_id: number // foreign key to Events
 
+Users // table: users
+        id: number
+        created_at: string
+        email: string
+        password: string
+
 */
 
 // Hooks for "events" table
