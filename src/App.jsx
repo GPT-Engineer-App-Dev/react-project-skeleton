@@ -1,4 +1,5 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
+import Private from "./pages/Private.jsx";
 import Index from "./pages/Index.jsx";
 import Login from "./pages/Login.jsx";
 import { useSupabaseAuth } from "./integrations/supabase/auth.jsx";
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
+      <Route path="/private" element={session ? <Private /> : <Navigate to="/login" />} />
       </Routes>
       <Flex as="nav" bg="blue.500" color="white" p={4} align="center">
         <Box p="2">
