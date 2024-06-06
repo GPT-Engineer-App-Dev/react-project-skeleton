@@ -3,7 +3,7 @@ import { useSupabaseAuth } from "../integrations/supabase/auth.jsx";
 import { Link } from "react-router-dom";
 
 const Index = () => {
-  const { session } = useSupabaseAuth();
+  const { session, logout } = useSupabaseAuth(); // Added logout here
   return (
     <Container maxW="container.xl" p={0}>
       <Flex as="nav" bg="blue.500" color="white" p={4} align="center">
